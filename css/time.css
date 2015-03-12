@@ -1,0 +1,42 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+#time {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 1000px;
+	height: 140px;
+}
+#time div {
+	float: left;
+	margin-right: 20px;
+}
+#hour1, #hour2, #hour3, #min1, #min2, #sec1, #sec2 {
+	width: 100px;
+	height: 140px;
+	position: relative;
+}
+#po1, #po2 {
+	width: 60px;
+	height: 140px;
+	position: relative;
+}
+.potop, .pobottom {
+	width: 20px;
+	height: 20px;
+	background: url(../images/dot.png) no-repeat -1px -1px;
+	position: absolute;
+	left: 20px;
+}
+.potop { top: 40px; }
+.pobottom { bottom: 20px; }
+.p {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: url(../images/dot.png) no-repeat -1px -1px;
+	display: none;
+}
