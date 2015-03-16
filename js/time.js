@@ -43,7 +43,7 @@ $(function(){
 	
 });
 
-var currentDay, begTime;
+var currentDay, begDate;
 function judgeTime()
 {
     ///////////////////////////////////////////////////////////////
@@ -74,7 +74,10 @@ function judgeTime()
 		setInterval('changetime("'+last+'")',1000);
 	}
 	else if (currentDay > endDate) {
-		begDate += 24 * 60 * 60 * 1000; // plus one day
+		//begDate += 24 * 60 * 60 * 1000; // plus one day
+		begDate.setDate(begDate.getDate()+1);
+		
+		begDate  = new Date(begDate);
 		last = begDate.getFullYear() + "/" + (begDate.getMonth()+1>=10?begDate.getMonth()+1:"0"+(begDate.getMonth()+1)) + "/" + (begDate.getDate()>=10?begDate.getDate():"0"+begDate.getDate()) + " " + defBegTime;
 		
 	    changetime(last);
@@ -85,7 +88,7 @@ function judgeTime()
 	}
 	
 	// 循环查询时间是否到了
-	callMoreTime();
+	//callMoreTime();
 }
 
 function callMoreTime() {
@@ -100,12 +103,17 @@ function waitTimeUp() {
 	}
 	
 	// ok, time is enough
-	$("#time").after('<a href="http://mewx.org/" title="点击鼠标立即抢购~" target="_self"><div style="position:absolute;top:0px;left:0px;height:100%;width:100%;background-image:url(images/get.png);background-size:100% 100%;text-align:center;z-index:2;">点击鼠标立即抢购~</div></a>');
+	var obj = document.getElementById("book"); 
+	if (!obj){
+		$("#info").remove();
+		$("#btnbook").append('<a href="http://mewx.org/" title="点击鼠标立即抢购~" target="_self"><img id="enter" src="images/enter.png" style="width:300px;height:300px;text-align:center;z-index:2;"/></a>');
+	}
 }
 
 var h, m;
 function changetime(lasttime){
 	var time=new Date(lasttime).getTime()-new Date().getTime();
+
 	time = Math.floor(time/1000);
 	var s = time%60;
 	var s1=Math.floor(s/10);

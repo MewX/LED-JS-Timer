@@ -5,14 +5,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language" content="zh-CN" />
 	<link rel="stylesheet" href="css/time.css" type="text/css" />
-	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/time.js"></script>
 </head>
-<body style="background-color:#62080D">
-<div style="width:1000px;height:100%;">
+<body style="">
+<div style="width:1000px;height:1687px;background:url(images/bg.jpg) no-repeat">
 <div style="text-align:left">
-	<img src="http://hebei.sinaimg.cn/2015/0213/U11794P1275DT20150213094722.jpg"  style="width:1000px;height:400px"/>
-	<p style="font-size:36px;font-family:黑体;color:#fff">距离下一波抢购倒计时：</p>
+	<p style="width:1000px;height:1000px"></p>
+	<p style="padding-left:60px;font-size:36px;font-family:黑体;color:#fff">距离下一波抢购剩余时间为：</p>
 </div>
 <div id="time">
 	<div id="hour2"></div>
@@ -30,6 +30,26 @@
 	<div id="sec1"></div>
 	<div id="sec2"></div>
 </div>
+<div id="btnbook" style="width:1000px;height:250px">
+	<img id="book" src="images/book.png" style="padding-top:50px;cursor:pointer"/>
 </div>
+<p style="cursor:pointer;text-align:center;font-size:36px;font-family:黑体;color:#fff">查看历史抢购</p>
+</div>
+
+<script type="text/javascript"> 
+$(function(){ 
+  $("#book").click(function(){ 
+	$("#book").remove();
+	$("#btnbook").append('<p id="info" style="cursor:default;padding-top:50px;text-align:center;font-size:36px;font-family:黑体;color:#fff">您已成功预约本次抢购<br/>届时可以参与抢购活动</p>');
+	
+	waitTimeUp();
+  }); 
+}); 
+
+function change(){ 
+alert("onclick"); 
+} 
+</script>
+
 </body>
 </html>

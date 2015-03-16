@@ -6,9 +6,9 @@ body {
 #time {
 	position: relative;
 	top: 0px;
-	left: 0px;
-	width: 1000px;
-	height: 140px;
+	left: 60px;
+	width: 940px;
+	height: 150px;
 }
 #time div {
 	float: left;
